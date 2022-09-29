@@ -20,8 +20,8 @@ form {
   padding: 20px;
   background-color: white;
   border-radius: 10px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  box-shadow: rgba(17, 17, 26, 0.27) 0px 4px 16px,
+    rgba(17, 17, 26, 0.292) 0px 8px 24px, rgba(17, 17, 26, 0.161) 0px 16px 56px;
 }
 
 form h1 {
@@ -125,6 +125,8 @@ form .dev {
   width: 360px;
   height: 100vh;
   background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 #users-div .header {
@@ -207,11 +209,26 @@ form .dev {
   outline: none;
   border: none;
   padding: 8px 15px;
-  background-color: rgb(0, 132, 255);
-  color: white;
+  background-color: #92d7ff;
+  color: black;
   font-size: 14px;
-  font-weight: 600;
   border-radius: 60px;
+}
+
+.users .user .info > button.developer {
+  background-color: #92d7ff;
+}
+
+.users .user .info > button.designer {
+  background-color: #f1b04c;
+}
+
+.users .user .info > button.manager {
+  background-color: #39e75f;
+}
+
+.users .user .info > button.advocate {
+  background-color: #e5a0c6;
 }
 
 #users-div .button {
@@ -238,94 +255,172 @@ form .dev {
   width: 100%;
   height: 100vh;
   display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow-y: scroll;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.766);
+  background-color: #d8f1ff;
 }
 
-.users-view > .close {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  font-size: 2rem;
-  color: blue;
-  font-weight: bolder;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 3rem;
-  background-color: rgb(0, 132, 255);
-  cursor: pointer;
+.users-view.active {
+  display: block;
 }
 
-.users-view .users-table {
-  width: 63rem;
+.users-view .user-header {
+  width: 100%;
   height: auto;
+  padding: 20px;
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  position: relative;
+}
+
+.users-view .user-header > i {
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: #ffa590;
+  color: #df2c14;
+  font-size: 25px;
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  cursor: pointer;
+}
+
+.user-header h1 {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.user-header h1 span {
+  color: rgb(0, 132, 255);
+}
+
+.user-header .category-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.user-header .category-btns button {
+  outline: none;
+  border: none;
+  background-color: rgb(0, 132, 255);
+  color: white;
+  border-radius: 7px;
+  font-size: 18px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.user-header .category-btns button:hover {
+  background-color: #00a2ff;
+}
+
+.users-view .users-section {
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  padding: 0 50px;
   align-items: flex-start;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  gap: 20px;
+}
+
+.users-view .users-section::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.users-view .users-section::-webkit-scrollbar-track {
+  background-color: #dfdfdf;
+}
+
+.users-view .users-section::-webkit-scrollbar-thumb {
   border-radius: 1rem;
-  /* background-color: white; */
-  /* display: none; */
+  background-color: rgb(202, 202, 202);
 }
 
-/* .users-view .users-table {
-  width: 100%;
-  height: auto;
-  padding: 2rem 1rem;
-  background-color: rgb(34, 34, 34);
-} */
-
-.users-table h1 {
-  color: white;
-  margin-bottom: 1.5rem;
-}
-
-.users-table table {
-  width: 100%;
-  height: auto;
-  border-collapse: collapse;
-  border-radius: 10px 10px 0 0;
-  overflow: hidden;
-}
-
-.users-table table thead {
-  background-color: #272727;
-}
-
-.users-table table thead td {
-  text-transform: capitalize;
-  text-align: left;
-  padding-left: 1rem;
-  font-size: 1.5rem;
-  padding: 0.8rem;
-  color: white;
-}
-
-.users-table table tbody tr {
+.users-section .usersbox {
+  flex-basis: 30%;
   background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
-.users-table table tbody tr:nth-child(even) {
-  background-color: #d9f1ff;
-}
-
-.users-table table tbody td {
-  padding: 0.7rem 0rem 0.7rem 1rem;
+.usersbox .info {
   text-align: left;
-  font-size: 1.4rem;
+  margin-bottom: 35px;
+}
+
+.usersbox .info h1 {
+  font-size: 30px;
+  color: #272727;
+  margin-bottom: 6px;
+}
+
+.usersbox .info p {
+  color: rgb(103, 103, 103);
+}
+
+.usersbox hr {
+  height: 1px;
+  width: 100%;
+  background-color: gainsboro;
+  margin-bottom: 15px;
+}
+
+.usersbox .account {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.usersbox .account .address {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.usersbox .account .address img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.usersbox .account button {
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  border-radius: 60px;
+  font-size: 15px;
   color: black;
 }
 
-.users-table table tbody td img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 191, 0, 0.914);
+.usersbox.developer button {
+  background-color: #92d7ff;
+}
+
+.usersbox.manager button {
+  background-color: #39e75f;
+}
+
+.usersbox.designer button {
+  background-color: #f1b04c;
+}
+
+.usersbox.advocate button {
+  background-color: #e5a0c6;
 }
