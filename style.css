@@ -1,0 +1,331 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: rgb(0, 132, 255);
+  padding-left: 200px;
+}
+
+form {
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+form h1 {
+  font-size: 35px;
+  color: #272727;
+  margin-bottom: 20px;
+}
+
+form > p {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 20px;
+}
+
+form > p span {
+  color: rgb(0, 132, 255);
+  margin-right: 7px;
+}
+
+form .input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+form .input label {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 3px;
+  color: rgb(42, 42, 42);
+}
+
+form .input input,
+select {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border: none;
+  border: 1px solid gray;
+  font-size: 18px;
+  padding-left: 12px;
+  border-radius: 7px;
+}
+
+form .input input:focus {
+  border: 1px solid rgb(0, 132, 255);
+}
+
+form .conditions {
+  width: 100%;
+  display: flex;
+  margin: 10px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+form .conditions input {
+  height: 15px;
+  width: 15px;
+}
+
+form .conditions p span {
+  color: rgb(0, 132, 255);
+  cursor: pointer;
+}
+
+form .btn {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+form .btn button {
+  outline: none;
+  border: none;
+  padding: 12px 80px;
+  background-color: rgb(0, 132, 255);
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 60px;
+}
+
+form .dev {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#users-div {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 360px;
+  height: 100vh;
+  background-color: white;
+}
+
+#users-div .header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#users-div .header h1 {
+  color: #272727;
+  font-size: 30px;
+}
+
+#users-div .header h1 span {
+  color: rgb(0, 132, 255);
+}
+
+#users-div .users {
+  width: 100%;
+  height: 550px;
+  padding: 10px;
+  background-color: #dfdfdf;
+  overflow-y: scroll;
+  box-shadow: inset 0 32px 32px -32px rgba(0, 0, 0, 0.168),
+    inset 0 -32px 32px -32px rgba(0, 0, 0, 0.161);
+}
+
+#users-div .users .user {
+  width: 100%;
+  padding: 5px;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 32px rgb(0 0 0 / 9%), 0 16px -16px rgb(0 0 0 / 10%);
+}
+
+#users-div .users::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+#users-div .users::-webkit-scrollbar-track {
+  background-color: #dfdfdf;
+}
+
+#users-div .users::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: gray;
+}
+
+.users .user .img {
+  width: 50px;
+  height: 50px;
+}
+
+.users .user .img img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.users .user .info {
+  flex-basis: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.users .user .info p {
+  color: gray;
+  font-weight: 500;
+}
+
+.users .user .info > button {
+  outline: none;
+  border: none;
+  padding: 8px 15px;
+  background-color: rgb(0, 132, 255);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 60px;
+}
+
+#users-div .button {
+  width: 100%;
+  height: calc(100vh - 630px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#users-div .button button {
+  outline: none;
+  border: none;
+  padding: 12px 80px;
+  background-color: rgb(0, 132, 255);
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 60px;
+}
+
+.users-view {
+  width: 100%;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.766);
+}
+
+.users-view > .close {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: blue;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  background-color: rgb(0, 132, 255);
+  cursor: pointer;
+}
+
+.users-view .users-table {
+  width: 63rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 1rem;
+  /* background-color: white; */
+  /* display: none; */
+}
+
+/* .users-view .users-table {
+  width: 100%;
+  height: auto;
+  padding: 2rem 1rem;
+  background-color: rgb(34, 34, 34);
+} */
+
+.users-table h1 {
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.users-table table {
+  width: 100%;
+  height: auto;
+  border-collapse: collapse;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.users-table table thead {
+  background-color: #272727;
+}
+
+.users-table table thead td {
+  text-transform: capitalize;
+  text-align: left;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  color: white;
+}
+
+.users-table table tbody tr {
+  background-color: white;
+}
+
+.users-table table tbody tr:nth-child(even) {
+  background-color: #d9f1ff;
+}
+
+.users-table table tbody td {
+  padding: 0.7rem 0rem 0.7rem 1rem;
+  text-align: left;
+  font-size: 1.4rem;
+  color: black;
+}
+
+.users-table table tbody td img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 191, 0, 0.914);
+}
